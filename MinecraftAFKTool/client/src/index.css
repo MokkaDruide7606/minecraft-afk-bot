@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: 240 6% 10%; /* #1a1a1a */
+  --foreground: 0 0% 100%; /* #ffffff */
+  --muted: 240 5% 18%; /* #2d2d30 */
+  --muted-foreground: 240 5% 65%; /* #a1a1aa */
+  --popover: 240 6% 10%; /* #1a1a1a */
+  --popover-foreground: 0 0% 100%; /* #ffffff */
+  --card: 240 5% 18%; /* #2d2d30 */
+  --card-foreground: 0 0% 100%; /* #ffffff */
+  --border: 220 13% 18%; /* #374151 */
+  --input: 220 13% 18%; /* #374151 */
+  --primary: 123 100% 50%; /* #00ff41 */
+  --primary-foreground: 240 6% 10%; /* #1a1a1a */
+  --secondary: 240 5% 18%; /* #2d2d30 */
+  --secondary-foreground: 0 0% 100%; /* #ffffff */
+  --accent: 240 5% 18%; /* #2d2d30 */
+  --accent-foreground: 0 0% 100%; /* #ffffff */
+  --destructive: 0 62% 52%; /* #dc2626 */
+  --destructive-foreground: 0 0% 100%; /* #ffffff */
+  --ring: 123 100% 50%; /* #00ff41 */
+  --radius: 0.5rem;
+  
+  /* Custom Minecraft colors */
+  --mc-green: 123 100% 50%; /* #00ff41 */
+  --mc-dark: 240 6% 10%; /* #1a1a1a */
+  --mc-surface: 240 5% 18%; /* #2d2d30 */
+  --mc-border: 220 13% 18%; /* #374151 */
+}
+
+.dark {
+  --background: 240 6% 10%; /* #1a1a1a */
+  --foreground: 0 0% 100%; /* #ffffff */
+  --muted: 240 5% 18%; /* #2d2d30 */
+  --muted-foreground: 240 5% 65%; /* #a1a1aa */
+  --popover: 240 6% 10%; /* #1a1a1a */
+  --popover-foreground: 0 0% 100%; /* #ffffff */
+  --card: 240 5% 18%; /* #2d2d30 */
+  --card-foreground: 0 0% 100%; /* #ffffff */
+  --border: 220 13% 18%; /* #374151 */
+  --input: 220 13% 18%; /* #374151 */
+  --primary: 123 100% 50%; /* #00ff41 */
+  --primary-foreground: 240 6% 10%; /* #1a1a1a */
+  --secondary: 240 5% 18%; /* #2d2d30 */
+  --secondary-foreground: 0 0% 100%; /* #ffffff */
+  --accent: 240 5% 18%; /* #2d2d30 */
+  --accent-foreground: 0 0% 100%; /* #ffffff */
+  --destructive: 0 62% 52%; /* #dc2626 */
+  --destructive-foreground: 0 0% 100%; /* #ffffff */
+  --ring: 123 100% 50%; /* #00ff41 */
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply font-sans antialiased bg-background text-foreground;
+  }
+}
+
+@layer utilities {
+  .mc-green {
+    color: hsl(var(--mc-green));
+  }
+  
+  .bg-mc-green {
+    background-color: hsl(var(--mc-green));
+  }
+  
+  .bg-mc-dark {
+    background-color: hsl(var(--mc-dark));
+  }
+  
+  .bg-mc-surface {
+    background-color: hsl(var(--mc-surface));
+  }
+  
+  .border-mc-border {
+    border-color: hsl(var(--mc-border));
+  }
+  
+  .text-mc-green {
+    color: hsl(var(--mc-green));
+  }
+  
+  .text-mc-dark {
+    color: hsl(var(--mc-dark));
+  }
+}
+
+/* Custom slider styles */
+.slider-thumb::-webkit-slider-thumb {
+  appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: hsl(var(--mc-green));
+  cursor: pointer;
+  border: 2px solid hsl(var(--mc-dark));
+}
+
+.slider-thumb::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: hsl(var(--mc-green));
+  cursor: pointer;
+  border: 2px solid hsl(var(--mc-dark));
+}
+
+/* Pulse animation for status indicators */
+@keyframes pulse-green {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.animate-pulse-green {
+  animation: pulse-green 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
